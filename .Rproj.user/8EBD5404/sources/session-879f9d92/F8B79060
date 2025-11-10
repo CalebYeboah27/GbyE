@@ -3,9 +3,9 @@
     "path": "~/Documents/Caleb/Courses/GenotypeByEnvironment/AGRo896-003GXEProject/DataMgt.R",
     "project_path": "DataMgt.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "2339983291",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1762613694597.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -17,11 +17,11 @@
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1762811158,
+    "lastKnownWriteTime": 1762815092,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1762814859880,
+    "last_content_update": 1762815092393,
     "read_only": false,
     "read_only_alternatives": []
 }

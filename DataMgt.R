@@ -1,6 +1,9 @@
 library(dplyr)
 
+load("GbyE.RData")
+
 Dataset <- read.csv("Group3.csv")
+
 
 
 group3 <- Dataset |> 
