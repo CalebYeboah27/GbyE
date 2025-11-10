@@ -1,0 +1,7 @@
+{
+    "installOptions": {
+        "installFromRepository": true,
+        "libraryPath": "/Users/calebyeboah/Documents/Caleb/Courses/GenotypeByEnvironment/AGRo896-003GXEProject/renv/library/macos/R-4.4/x86_64-apple-darwin20",
+        "installDependencies": true
+    }
+}

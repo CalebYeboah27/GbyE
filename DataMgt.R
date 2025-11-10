@@ -1,0 +1,58 @@
+library(dplyr)
+
+Dataset <- read.csv("Group3.csv")
+
+
+group3 <- Dataset |> 
+                mutate(RecID = Rec_ID,
+                       ExpID = Experiment_ID, 
+                       EnvID = YrLocID, 
+                       HybID = Hyb_ID, 
+                       HybType = Entry_Type,
+                       TesterID = Tester_ID,
+                       MST = MOIST,
+                       HybPed = Hyb_Ped) |>
+                select(RecID, 
+                       ExpID, 
+                       LocID, 
+                       EnvID,
+                       HybPed,
+                       HybID,
+                       HybType, 
+                       TesterID, 
+                       YLD,
+                       MST,
+                       TWT,
+                       PLTHT,
+                       EARHT)
+
+
+group3_yld <- group3 |> 
+                    select(RecID, ExpID, LocID, EnvID, HybPed, HybID, HybType, TesterID, YLD) |>
+                    filter(!is.na(YLD)) 
+
+
+
+group3_mst <- group3 |> 
+                    select(RecID, ExpID, LocID, EnvID, HybPed, HybID, HybType, TesterID, MST) |>
+                    filter(!is.na(MST))
+
+group3_twt <- group3 |> 
+                    select(RecID, ExpID, LocID, EnvID, HybPed, HybID, HybType, TesterID, TWT) |>
+                    filter(!is.na(TWT))
+
+group3_pltht <- group3 |> 
+                    select(RecID, ExpID, LocID, EnvID, HybPed, HybID, HybType, TesterID, PLTHT) |>
+                    filter(!is.na(PLTHT))
+
+
+group3_earht <- group3 |> 
+                    select(RecID, ExpID, LocID, EnvID, HybPed, HybID, HybType, TesterID, EARHT) |>
+                    filter(!is.na(EARHT))
+
+
+
+
+
+
+
