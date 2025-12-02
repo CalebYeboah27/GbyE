@@ -1,10 +1,12 @@
 install.packages("data.table")
 install.packages("ggplot2")
 install.packages("jsonlite")
+install.packages("lme4")
 install.packages("~/Downloads/Setups/asreml_4.2.0.355.tgz", 
                  repos = NULL, type = "mac.binary")
 
 library(asreml)
+library(lme4)
 
 
 group3_yld$HybID <- as.factor(group3_yld$HybID)
@@ -19,6 +21,11 @@ model_yld <- asreml(
                   residual = ~ units,               
                   data     = group3_yld
                 )
+
+
+anova(lmer(YLD ~ EnvID + (1|HybID) + (1|HybID:EnvID), data = group3_yld))
+
+?lmer
 
 
 # Model Summary

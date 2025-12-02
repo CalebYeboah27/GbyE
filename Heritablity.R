@@ -1,19 +1,19 @@
 
 heritability_df <- tibble(
-  Model = c("FT Genes", "Whole Genome"),
-  Heritability = c(0.36, 0.67) 
+  Trait = c("Yield", "MST", "TWT",  "EARHT"),
+  Heritability = c(0.56, 0.57, 0.71, 0.67) 
 )
 
 
 
 Het_plot <- heritability_df |>
-  ggplot(aes(x = Model, y = Heritability, fill = Model)) +
+  ggplot(aes(x = Trait, y = Heritability, fill = Trait)) +
   geom_col(position = position_dodge(width = 0.8)) +
   coord_flip() +
-  labs(x = NULL, y = "Heritability", fill = "Window Size") +
+  labs(x = NULL, y = "Repeatability", fill = "Trait") +
   theme_minimal(base_size = 14) +
   theme() +
-  scale_fill_brewer(palette = "Reds") +
+  scale_fill_brewer(palette = "RdPu") +
   geom_text(aes(label = round(Heritability, 2)), hjust = -0.3) +
   theme(
     axis.text.x = element_text(size = 14),

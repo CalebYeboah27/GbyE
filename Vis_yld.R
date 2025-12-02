@@ -25,8 +25,10 @@ yld_plt_data <- blups_yld %>%
                     filter(!is.na(HybPed)) %>%
                     select(HybPed, HybClass, HybID, YLD) %>%
                     arrange(desc(YLD)) %>%
-                    slice_head(n = 13) %>%
+                    slice_head(n = 28) %>%
                     mutate(HybPed = fct_reorder(HybPed, YLD))
+
+yld_plt_data$HybPed
 
 
 yld_plt_data %>%  ggplot(aes(x = HybPed, y = YLD, fill = HybClass)) +
