@@ -12,6 +12,7 @@ library(lme4)
 group3_yld$HybID <- as.factor(group3_yld$HybID)
 group3_yld$EnvID <- as.factor(group3_yld$EnvID)
 
+group3_yld$EnvID
 
 
 # Model specification
@@ -25,7 +26,7 @@ model_yld <- asreml(
 
 anova(lmer(YLD ~ EnvID + (1|HybID) + (1|HybID:EnvID), data = group3_yld))
 
-?lmer
+
 
 
 # Model Summary

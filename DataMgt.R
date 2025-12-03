@@ -532,8 +532,8 @@ g2f_earht_2023_df <- g2f_2023_vec %>%
                              PlotID,
                              Block, 
                              Replicate,
-                             PlantHeight) %>%
-                      filter(!is.na(PlantHeight) & !is.na(EnvID))
+                             EarHeight) %>%
+                      filter(!is.na(EarHeight) & !is.na(EnvID))
 
 
 

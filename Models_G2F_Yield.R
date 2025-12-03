@@ -115,7 +115,7 @@ effect_sizes_yld <- effect_sizes_df$effect
 
 blups_g2f_NE_yld <- data.frame(
   "Pedigree" = Pedigree,
-  YLD = effect_sizes_yld
+  "GrainYield" = effect_sizes_yld
 )
 
 
@@ -130,7 +130,7 @@ effect_sizes_yld <- effect_sizes_df$effect
 
 blups_g2f_MN_yld <- data.frame(
   "Pedigree" = Pedigree,
-  YLD = effect_sizes_yld
+  "GrainYield" = effect_sizes_yld
 )
 
 
@@ -145,7 +145,7 @@ effect_sizes_yld <- effect_sizes_df$effect
 
 blups_g2f_IA_yld <- data.frame(
   "Pedigree" = Pedigree,
-  YLD = effect_sizes_yld
+  "GrainYield" = effect_sizes_yld
 )
 
 
