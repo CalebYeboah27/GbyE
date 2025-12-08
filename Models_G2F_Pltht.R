@@ -106,7 +106,7 @@ effect_sizes_pltht <- effect_sizes_df$effect
 
 blups_g2f_NE_pltht <- data.frame(
   "Pedigree" = Pedigree,
-  "Pltht" = effect_sizes_pltht
+  "NE_Pltht" = effect_sizes_pltht
 )
 
 
@@ -123,7 +123,7 @@ effect_sizes_pltht <- effect_sizes_df$effect
 
 blups_g2f_MN_pltht <- data.frame(
   "Pedigree" = Pedigree,
-  "Pltht" = effect_sizes_pltht
+  "MN_Pltht" = effect_sizes_pltht
 )
 
 
@@ -140,7 +140,7 @@ effect_sizes_pltht <- effect_sizes_df$effect
 
 blups_g2f_IA_pltht <- data.frame(
   "Pedigree" = Pedigree,
-  "Pltht" = effect_sizes_pltht
+  "IA_Pltht" = effect_sizes_pltht
 )
 
 

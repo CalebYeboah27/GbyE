@@ -106,7 +106,7 @@ effect_sizes_stlk <- effect_sizes_df$effect
 
 blups_g2f_NE_stlk <- data.frame(
   "Pedigree" = Pedigree,
-  "Stlk" = effect_sizes_stlk
+  "NE_Stlk" = effect_sizes_stlk
 )
 
 
@@ -123,7 +123,7 @@ effect_sizes_stlk <- effect_sizes_df$effect
 
 blups_g2f_MN_stlk <- data.frame(
   "Pedigree" = Pedigree,
-  "Stlk" = effect_sizes_stlk
+  "MN_Stlk" = effect_sizes_stlk
 )
 
 
@@ -140,7 +140,7 @@ effect_sizes_stlk <- effect_sizes_df$effect
 
 blups_g2f_IA_stlk <- data.frame(
   "Pedigree" = Pedigree,
-  "Stlk" = effect_sizes_stlk
+  "IA_Stlk" = effect_sizes_stlk
 )
 
 

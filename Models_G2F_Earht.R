@@ -106,7 +106,7 @@ effect_sizes_earht <- effect_sizes_df$effect
 
 blups_g2f_NE_earht <- data.frame(
   "Pedigree" = Pedigree,
-  "Earht" = effect_sizes_earht
+  "NE_Earht" = effect_sizes_earht
 )
 
 
@@ -123,7 +123,7 @@ effect_sizes_earht <- effect_sizes_df$effect
 
 blups_g2f_MN_earht <- data.frame(
   "Pedigree" = Pedigree,
-  "Earht" = effect_sizes_earht
+  "MN_Earht" = effect_sizes_earht
 )
 
 
@@ -140,7 +140,7 @@ effect_sizes_earht <- effect_sizes_df$effect
 
 blups_g2f_IA_earht <- data.frame(
   "Pedigree" = Pedigree,
-  "Earht" = effect_sizes_earht
+  "IA_Earht" = effect_sizes_earht
 )
 
 

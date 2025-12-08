@@ -120,11 +120,11 @@ blups_g2f_NE_yld <- data.frame(
 
 
 ################ MN
-rn_yld <- rownames(coef(model_g2f_NE_yld)$random)
+rn_yld <- rownames(coef(model_g2f_MN_yld)$random)
 Pedigree <- sapply(strsplit(rn_yld, "_"), `[`, 2)
 
 
-effect_sizes <- model_g2f_NE_yld$coefficients$random
+effect_sizes <- model_g2f_MN_yld$coefficients$random
 effect_sizes_df <- as.data.frame(effect_sizes)
 effect_sizes_yld <- effect_sizes_df$effect
 
@@ -135,11 +135,11 @@ blups_g2f_MN_yld <- data.frame(
 
 
 ################ IA
-rn_yld <- rownames(coef(model_g2f_NE_yld)$random)
+rn_yld <- rownames(coef(model_g2f_IA_yld)$random)
 Pedigree <- sapply(strsplit(rn_yld, "_"), `[`, 2)
 
 
-effect_sizes <- model_g2f_NE_yld$coefficients$random
+effect_sizes <- model_g2f_IA_yld$coefficients$random
 effect_sizes_df <- as.data.frame(effect_sizes)
 effect_sizes_yld <- effect_sizes_df$effect
 

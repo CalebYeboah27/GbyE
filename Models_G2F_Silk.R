@@ -106,7 +106,7 @@ effect_sizes_silk <- effect_sizes_df$effect
 
 blups_g2f_NE_silk <- data.frame(
   "Pedigree" = Pedigree,
-  "Silk" = effect_sizes_silk
+  "NE_Silk" = effect_sizes_silk
 )
 
 
@@ -123,7 +123,7 @@ effect_sizes_silk <- effect_sizes_df$effect
 
 blups_g2f_MN_silk <- data.frame(
   "Pedigree" = Pedigree,
-  "Silk" = effect_sizes_silk
+  "MN_Silk" = effect_sizes_silk
 )
 
 
@@ -140,7 +140,7 @@ effect_sizes_silk <- effect_sizes_df$effect
 
 blups_g2f_IA_silk <- data.frame(
   "Pedigree" = Pedigree,
-  "Silk" = effect_sizes_silk
+  "IA_Silk" = effect_sizes_silk
 )
 
 

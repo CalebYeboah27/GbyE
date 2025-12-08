@@ -107,7 +107,7 @@ effect_sizes_anth <- effect_sizes_df$effect
 
 blups_g2f_NE_anth <- data.frame(
   "Pedigree" = Pedigree,
-  Anth = effect_sizes_anth
+  "NE_Anth" = effect_sizes_anth
 )
 
 
@@ -124,7 +124,7 @@ effect_sizes_anth <- effect_sizes_df$effect
 
 blups_g2f_MN_anth <- data.frame(
   "Pedigree" = Pedigree,
-  Anth = effect_sizes_anth
+  "MN_Anth" = effect_sizes_anth
 )
 
 
@@ -141,7 +141,7 @@ effect_sizes_anth <- effect_sizes_df$effect
 
 blups_g2f_IA_anth <- data.frame(
   "Pedigree" = Pedigree,
-  Anth = effect_sizes_anth
+  "IA_Anth" = effect_sizes_anth
 )
 
 

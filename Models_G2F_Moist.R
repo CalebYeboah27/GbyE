@@ -106,7 +106,7 @@ effect_sizes_moist <- effect_sizes_df$effect
 
 blups_g2f_NE_moist <- data.frame(
   "Pedigree" = Pedigree,
-  "Moist" = effect_sizes_moist
+  "NE_Moist" = effect_sizes_moist
 )
 
 
@@ -123,7 +123,7 @@ effect_sizes_moist <- effect_sizes_df$effect
 
 blups_g2f_MN_moist <- data.frame(
   "Pedigree" = Pedigree,
-  "Moist" = effect_sizes_moist
+  "MN_Moist" = effect_sizes_moist
 )
 
 
@@ -140,7 +140,7 @@ effect_sizes_moist <- effect_sizes_df$effect
 
 blups_g2f_IA_moist <- data.frame(
   "Pedigree" = Pedigree,
-  "Moist" = effect_sizes_moist
+  "IA_Moist" = effect_sizes_moist
 )
 
 
