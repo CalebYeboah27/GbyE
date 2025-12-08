@@ -18,29 +18,31 @@ my_pal <- pal_20[6:20]   # gives 11 good strong colors
 
 
 
-# named list of trait dataframes
+# named list of trait data frames
 g2f_blups_list <- list(
   NE_Yield   = blups_g2f_NE_yld,
   MN_Yield   = blups_g2f_MN_yld,
   IA_Yield   = blups_g2f_IA_yld,
   NE_Anth    = blups_g2f_NE_anth,
   MN_Anth    = blups_g2f_MN_anth,
+  IA_Anth    = blups_g2f_IA_anth,
   NE_Silk    = blups_g2f_NE_silk,
   MN_Silk    = blups_g2f_NE_silk,
   IA_Silk    = blups_g2f_IA_silk,
-  NE_Pltht    = blups_g2f_NE_pltht,
-  MN_Pltht    = blups_g2f_NE_pltht,
-  IA_Pltht    = blups_g2f_IA_pltht,
-  NE_Earht    = blups_g2f_NE_earht,
-  MN_Earht    = blups_g2f_NE_earht,
-  IA_Earht    = blups_g2f_IA_earht,
-  NE_Moist    = blups_g2f_NE_moist,
-  MN_Moist    = blups_g2f_NE_moist,
-  IA_Moist    = blups_g2f_IA_moist,
+  NE_Pltht   = blups_g2f_NE_pltht,
+  MN_Pltht   = blups_g2f_NE_pltht,
+  IA_Pltht   = blups_g2f_IA_pltht,
+  NE_Earht   = blups_g2f_NE_earht,
+  MN_Earht   = blups_g2f_NE_earht,
+  IA_Earht   = blups_g2f_IA_earht,
+  NE_Moist   = blups_g2f_NE_moist,
+  MN_Moist   = blups_g2f_NE_moist,
+  IA_Moist   = blups_g2f_IA_moist,
   NE_Stlk    = blups_g2f_NE_stlk,
   MN_Stlk    = blups_g2f_NE_stlk,
   IA_Stlk    = blups_g2f_IA_silk
 )
+
 
 
 
