@@ -82,6 +82,12 @@ g2f_2021_vec$State <- recode(g2f_2021_vec$State,
                              "Iowa" = "IA",
                              .default = "")
 
+# correct errors with city names
+g2f_2021_vec$City <- recode(g2f_2021_vec$City, "Noth Platte" = "North Platte", "Lincoln " = "Lincoln")
+g2f_2022_vec$City <- recode(g2f_2022_vec$City, "Noth Platte" = "North Platte", "Lincoln " = "Lincoln")
+g2f_2023_vec$City <- recode(g2f_2023_vec$City, "Noth Platte" = "North Platte", "Lincoln " = "Lincoln")
+
+
 
 # Rename columns
 colnames(g2f_2021_vec)[2] <- "FieldLocation"
@@ -135,7 +141,7 @@ g2f_2023_vec$PlotID <- as.character(g2f_2023_vec$PlotID)
 
 # Select relevant columns and filter out missing rows
 g2f_yld_2021_df <- g2f_2021_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -153,7 +159,7 @@ g2f_yld_2021_df <- g2f_2021_vec %>%
 
 
 g2f_yld_2022_df <- g2f_2022_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -172,7 +178,7 @@ g2f_yld_2022_df <- g2f_2022_vec %>%
 
 
 g2f_yld_2023_df <- g2f_2023_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -205,7 +211,7 @@ g2f_yld_df <- as.data.frame(g2f_yld_df)
 
 # Select relevant columns and filter out missing rows
 g2f_anth_2021_df <- g2f_2021_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -223,7 +229,7 @@ g2f_anth_2021_df <- g2f_2021_vec %>%
 
 
 g2f_anth_2022_df <- g2f_2022_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -242,7 +248,7 @@ g2f_anth_2022_df <- g2f_2022_vec %>%
 
 
 g2f_anth_2023_df <- g2f_2023_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -276,7 +282,7 @@ g2f_anth_df <- as.data.frame(g2f_anth_df)
 
 # Select relevant columns and filter out missing rows
 g2f_silk_2021_df <- g2f_2021_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -294,7 +300,7 @@ g2f_silk_2021_df <- g2f_2021_vec %>%
 
 
 g2f_silk_2022_df <- g2f_2022_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -313,7 +319,7 @@ g2f_silk_2022_df <- g2f_2022_vec %>%
 
 
 g2f_silk_2023_df <- g2f_2023_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -341,13 +347,35 @@ g2f_silk_df <- as.data.frame(g2f_silk_df)
 
 
 
+g2f_2021_df <- g2f_2021_vec %>% 
+  mutate(EnvID = paste0(City, Year)) %>%
+  select(Year, 
+         FieldLocation, 
+         State, 
+         City,
+         EnvID,
+         Pedigree,
+         Experiment,
+         Plot, 
+         PlotID,
+         Block, 
+         Replicate,
+         AnthesisDays,
+         SilkingDays,
+         PlantHeight,
+         EarHeight,
+         StalkLodging,
+         GrainMoisture,
+         GrainYield) %>%
+  filter(if_all(everything(), ~ !is.na(.)))
+
 
 
 
 
 
 g2f_2022_df <- g2f_2022_vec %>% 
-                    mutate(EnvID = paste0(State, Year)) %>%
+                    mutate(EnvID = paste0(City, Year)) %>%
                     select(Year, 
                            FieldLocation, 
                            State, 
@@ -371,7 +399,7 @@ g2f_2022_df <- g2f_2022_vec %>%
 
 
 g2f_2023_df <- g2f_2023_vec %>% 
-                    mutate(EnvID = paste0(State, Year)) %>%
+                    mutate(EnvID = paste0(City, Year)) %>%
                     select(Year, 
                            FieldLocation, 
                            State, 
@@ -411,7 +439,7 @@ g2f_combined_df <- as.data.frame(g2f_combined_df)
 
 # Select relevant columns and filter out missing rows
 g2f_pltht_2021_df <- g2f_2021_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -429,7 +457,7 @@ g2f_pltht_2021_df <- g2f_2021_vec %>%
 
 
 g2f_pltht_2022_df <- g2f_2022_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -448,7 +476,7 @@ g2f_pltht_2022_df <- g2f_2022_vec %>%
 
 
 g2f_pltht_2023_df <- g2f_2023_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -483,7 +511,7 @@ g2f_pltht_df <- as.data.frame(g2f_pltht_df)
 
 # Select relevant columns and filter out missing rows
 g2f_earht_2021_df <- g2f_2021_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -501,7 +529,7 @@ g2f_earht_2021_df <- g2f_2021_vec %>%
 
 
 g2f_earht_2022_df <- g2f_2022_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -520,7 +548,7 @@ g2f_earht_2022_df <- g2f_2022_vec %>%
 
 
 g2f_earht_2023_df <- g2f_2023_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -555,7 +583,7 @@ g2f_earht_df <- as.data.frame(g2f_earht_df)
 
 # Select relevant columns and filter out missing rows
 g2f_stlk_2021_df <- g2f_2021_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -573,7 +601,7 @@ g2f_stlk_2021_df <- g2f_2021_vec %>%
 
 
 g2f_stlk_2022_df <- g2f_2022_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -592,7 +620,7 @@ g2f_stlk_2022_df <- g2f_2022_vec %>%
 
 
 g2f_stlk_2023_df <- g2f_2023_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -626,7 +654,7 @@ g2f_stlk_df <- as.data.frame(g2f_stlk_df)
 
 # Select relevant columns and filter out missing rows
 g2f_moist_2021_df <- g2f_2021_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -644,7 +672,7 @@ g2f_moist_2021_df <- g2f_2021_vec %>%
 
 
 g2f_moist_2022_df <- g2f_2022_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -663,7 +691,7 @@ g2f_moist_2022_df <- g2f_2022_vec %>%
 
 
 g2f_moist_2023_df <- g2f_2023_vec %>% 
-                      mutate(EnvID = paste0(State, Year)) %>%
+                      mutate(EnvID = paste0(City, Year)) %>%
                       select(Year, 
                              FieldLocation, 
                              State, 
@@ -695,9 +723,35 @@ g2f_moist_df <- as.data.frame(g2f_moist_df)
 
 
 
+
+
 #######################################################################
+g2f_2021_df <- g2f_2021_vec %>% 
+  mutate(EnvID = paste0(City, Year)) %>%
+  select(Year, 
+         FieldLocation, 
+         State, 
+         City,
+         EnvID,
+         Pedigree,
+         Experiment,
+         Plot, 
+         PlotID,
+         Block, 
+         Replicate,
+         AnthesisDays,
+         SilkingDays,
+         PlantHeight,
+         EarHeight,
+         StalkLodging,
+         GrainMoisture,
+         GrainYield) %>%
+  filter(if_all(everything(), ~ !is.na(.)))
+
+
+
 g2f_2022_df <- g2f_2022_vec %>% 
-                    mutate(EnvID = paste0(State, Year)) %>%
+                    mutate(EnvID = paste0(City, Year)) %>%
                     select(Year, 
                            FieldLocation, 
                            State, 
@@ -721,7 +775,7 @@ g2f_2022_df <- g2f_2022_vec %>%
 
 
 g2f_2023_df <- g2f_2023_vec %>% 
-                    mutate(EnvID = paste0(State, Year)) %>%
+                    mutate(EnvID = paste0(City, Year)) %>%
                     select(Year, 
                            FieldLocation, 
                            State, 
@@ -748,6 +802,8 @@ g2f_2023_df <- g2f_2023_vec %>%
 g2f_combined_list <- list(g2f_2021_df, g2f_2022_df, g2f_2023_df)
 g2f_combined_df <- bind_rows(g2f_combined_list)
 
+
+unique(g2f_combined_df$City)
 
 
 

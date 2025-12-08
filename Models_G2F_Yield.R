@@ -1,9 +1,9 @@
-install.packages("data.table")
-install.packages("ggplot2")
-install.packages("jsonlite")
-install.packages("lme4")
-install.packages("~/Downloads/Setups/asreml_4.2.0.355.tgz", 
-                 repos = NULL, type = "mac.binary")
+#install.packages("data.table")
+#install.packages("ggplot2")
+#install.packages("jsonlite")
+#install.packages("lme4")
+#install.packages("~/Downloads/Setups/asreml_4.2.0.355.tgz", 
+#                 repos = NULL, type = "mac.binary")
 
 library(asreml)
 library(lme4)
@@ -115,7 +115,7 @@ effect_sizes_yld <- effect_sizes_df$effect
 
 blups_g2f_NE_yld <- data.frame(
   "Pedigree" = Pedigree,
-  "GrainYield" = effect_sizes_yld
+  "NE_Yield" = effect_sizes_yld
 )
 
 
@@ -130,7 +130,7 @@ effect_sizes_yld <- effect_sizes_df$effect
 
 blups_g2f_MN_yld <- data.frame(
   "Pedigree" = Pedigree,
-  "GrainYield" = effect_sizes_yld
+  "MN_Yield" = effect_sizes_yld
 )
 
 
@@ -145,7 +145,7 @@ effect_sizes_yld <- effect_sizes_df$effect
 
 blups_g2f_IA_yld <- data.frame(
   "Pedigree" = Pedigree,
-  "GrainYield" = effect_sizes_yld
+  "IA_Yield" = effect_sizes_yld
 )
 
 

@@ -10,20 +10,22 @@ library(viridis)
 
 
 # named list of trait dataframes
-blups_list <- list(
-  MST   = blups_mst,
-  TWT   = blups_twt,
-  PLTHT = blups_pltht,
-  EARHT = blups_earht
+g2f_blups_list <- list(
+  NE_Yield   = blups_g2f_NE_yld,
+  MN_Yield   = blups_g2f_MN_yld,
+  IA_Yield   = blups_g2f_IA_yld
 )
+
+
+blups_list$
 
 plots <- imap(blups_list, ~ {
   trait_col <- .y               # "MST", "TWT", ...
-  trait_df  <- .x %>% select(HybID, all_of(trait_col))
+  trait_df  <- .x %>% select(Pedigree, all_of(trait_col))
   
   # join the trait values onto the yld selection (keeps exact same HybIDs and order)
   df <- yld_plt_data %>%
-    left_join(trait_df, by = "HybID") %>%
+    left_join(trait_df, by = "Pedigree") %>%
     # ensure factor levels match the yld ordering (so x-axis is identical across traits)
     mutate(HybPed = factor(HybPed, levels = levels(yld_plt_data$HybPed)))
   

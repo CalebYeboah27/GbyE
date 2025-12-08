@@ -1,9 +1,9 @@
-install.packages("data.table")
-install.packages("ggplot2")
-install.packages("jsonlite")
-install.packages("lme4")
-install.packages("~/Downloads/Setups/asreml_4.2.0.355.tgz", 
-                 repos = NULL, type = "mac.binary")
+#install.packages("data.table")
+#install.packages("ggplot2")
+#install.packages("jsonlite")
+#install.packages("lme4")
+#install.packages("~/Downloads/Setups/asreml_4.2.0.355.tgz", 
+#                 repos = NULL, type = "mac.binary")
 
 library(asreml)
 library(lme4)
